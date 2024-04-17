@@ -100,7 +100,7 @@
             <string>translate</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="more_input_button">
            <property name="geometry">
             <rect>
              <x>230</x>
@@ -216,6 +216,19 @@
            </property>
           </widget>
          </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="more_input_page">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QWidget" name="more_input_header" native="true"/>
+        </item>
+        <item>
+         <widget class="QWidget" name="more_input_main" native="true"/>
+        </item>
+        <item>
+         <widget class="QWidget" name="more_input_main2" native="true"/>
         </item>
        </layout>
       </widget>

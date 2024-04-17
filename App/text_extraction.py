@@ -49,30 +49,30 @@ def crop_text_regions(text_regions: list[tuple], image_path: str):
     # Save the combined image
     cv2.imwrite("./App/tmp/cropped_text_region.jpg", canvas)
 
-def extract_text_from_img(image_path):
-    image = preprocess_image(image_path)
+def extract_text_from_img(image):
 
     text = pytesseract.image_to_string(image)
 
     return text
 
-if __name__ == "__main__":
-
-    image_path = "./App/test.jpg" 
-
+def image_to_text(image_path):
     preprocessed_image = preprocess_image(image_path)
-
     text_regions: list[tuple] = detect_text_regions(preprocessed_image)
-
     crop_text_regions(text_regions, image_path)
-
-    image_description = "%image% " + gemini_call.gemini_describe_image("./App/tmp/cropped_text_region.jpg")
-    
-    text_from_image = extract_text_from_img("./App/tmp/cropped_text_region.jpg")
-
+    image_description = "image: " + gemini_call.gemini_describe_image("./App/tmp/cropped_text_region.jpg")
+    text_from_image = extract_text_from_img(preprocessed_image)
     final_text = image_description + text_from_image
-
     os.remove("./App/tmp/cropped_text_region.jpg")
-
+    return final_text
+ 
+if __name__ == "__main__":
+    image_path = "./App/test.jpg" 
+    preprocessed_image = preprocess_image(image_path)
+    text_regions: list[tuple] = detect_text_regions(preprocessed_image)
+    crop_text_regions(text_regions, image_path)
+    image_description = "image: " + gemini_call.gemini_describe_image("./App/tmp/cropped_text_region.jpg")
+    text_from_image = extract_text_from_img(preprocessed_image)
+    final_text = image_description + text_from_image
+    #os.remove("./App/tmp/cropped_text_region.jpg")
     print(final_text)
    

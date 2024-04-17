@@ -59,9 +59,9 @@ class Ui_MainWindow(object):
         self.translate_button = QPushButton(self.main_page_main)
         self.translate_button.setObjectName(u"translate_button")
         self.translate_button.setGeometry(QRect(30, 150, 75, 24))
-        self.pushButton_2 = QPushButton(self.main_page_main)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(230, 150, 75, 24))
+        self.more_input_button = QPushButton(self.main_page_main)
+        self.more_input_button.setObjectName(u"more_input_button")
+        self.more_input_button.setGeometry(QRect(230, 150, 75, 24))
 
         self.verticalLayout_3.addWidget(self.main_page_main)
 
@@ -110,6 +110,26 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.translation_page_main2)
 
         self.app_router.addWidget(self.translation_page)
+        self.more_input_page = QWidget()
+        self.more_input_page.setObjectName(u"more_input_page")
+        self.verticalLayout = QVBoxLayout(self.more_input_page)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.more_input_header = QWidget(self.more_input_page)
+        self.more_input_header.setObjectName(u"more_input_header")
+
+        self.verticalLayout.addWidget(self.more_input_header)
+
+        self.more_input_main = QWidget(self.more_input_page)
+        self.more_input_main.setObjectName(u"more_input_main")
+
+        self.verticalLayout.addWidget(self.more_input_main)
+
+        self.more_input_main2 = QWidget(self.more_input_page)
+        self.more_input_main2.setObjectName(u"more_input_main2")
+
+        self.verticalLayout.addWidget(self.more_input_main2)
+
+        self.app_router.addWidget(self.more_input_page)
 
         self.verticalLayout_2.addWidget(self.app_router)
 
@@ -128,7 +148,7 @@ class Ui_MainWindow(object):
         self.header_name.setText(QCoreApplication.translate("MainWindow", u"AKAY", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"settings", None))
         self.translate_button.setText(QCoreApplication.translate("MainWindow", u"translate", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"more input", None))
+        self.more_input_button.setText(QCoreApplication.translate("MainWindow", u"more input", None))
         self.settings_button_2.setText(QCoreApplication.translate("MainWindow", u"settings", None))
         self.header_name_2.setText(QCoreApplication.translate("MainWindow", u"AKAY", None))
         self.translation_page_back_button.setText(QCoreApplication.translate("MainWindow", u"back", None))
