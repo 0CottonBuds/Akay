@@ -42,81 +42,189 @@
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QWidget" name="main_page_header" native="true">
-          <widget class="QLabel" name="header_name">
-           <property name="geometry">
-            <rect>
-             <x>130</x>
-             <y>10</y>
-             <width>111</width>
-             <height>71</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>28</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>AKAY</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="settings_button">
-           <property name="geometry">
-            <rect>
-             <x>290</x>
-             <y>40</y>
-             <width>75</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>settings</string>
-           </property>
-          </widget>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>80</height>
+           </size>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QWidget" name="widget" native="true">
+             <widget class="QPushButton" name="pushButton">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>20</y>
+                <width>75</width>
+                <height>24</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>About</string>
+              </property>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_2" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="header_name">
+                <property name="font">
+                 <font>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>AKAY</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_3" native="true">
+             <widget class="QPushButton" name="settings_button">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>75</width>
+                <height>24</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>settings</string>
+              </property>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
          <widget class="QWidget" name="main_page_main" native="true">
-          <widget class="QTextEdit" name="plain_text_input">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>381</width>
-             <height>131</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="translate_button">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>150</y>
-             <width>75</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>translate</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="more_input_button">
-           <property name="geometry">
-            <rect>
-             <x>230</x>
-             <y>150</y>
-             <width>75</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>more input</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>64</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="plain_text_input">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="placeholderText">
+              <string>Insert Text here</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_4" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QPushButton" name="translate_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>64</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-radius: 20px</string>
+                </property>
+                <property name="text">
+                 <string>translate</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="more_input_button">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>64</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>more input</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>120</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="main_page_main2" native="true"/>
+         <widget class="QWidget" name="main_page_main2" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>75</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>75</height>
+           </size>
+          </property>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>60</y>
+             <width>211</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>7</pointsize>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text">
+            <string>Made by Ndstoc - Innolympics 2024</string>
+           </property>
+          </widget>
+         </widget>
         </item>
        </layout>
       </widget>

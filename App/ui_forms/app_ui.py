@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QTextEdit, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
+    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
+    QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -39,34 +39,96 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.main_page_header = QWidget(self.main_page)
         self.main_page_header.setObjectName(u"main_page_header")
-        self.header_name = QLabel(self.main_page_header)
+        self.main_page_header.setMaximumSize(QSize(16777215, 80))
+        self.horizontalLayout = QHBoxLayout(self.main_page_header)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.widget = QWidget(self.main_page_header)
+        self.widget.setObjectName(u"widget")
+        self.pushButton = QPushButton(self.widget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(10, 20, 75, 24))
+
+        self.horizontalLayout.addWidget(self.widget)
+
+        self.widget_2 = QWidget(self.main_page_header)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_2 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.header_name = QLabel(self.widget_2)
         self.header_name.setObjectName(u"header_name")
-        self.header_name.setGeometry(QRect(130, 10, 111, 71))
         font = QFont()
         font.setPointSize(28)
         self.header_name.setFont(font)
-        self.settings_button = QPushButton(self.main_page_header)
+
+        self.horizontalLayout_2.addWidget(self.header_name)
+
+
+        self.horizontalLayout.addWidget(self.widget_2)
+
+        self.widget_3 = QWidget(self.main_page_header)
+        self.widget_3.setObjectName(u"widget_3")
+        self.settings_button = QPushButton(self.widget_3)
         self.settings_button.setObjectName(u"settings_button")
-        self.settings_button.setGeometry(QRect(290, 40, 75, 24))
+        self.settings_button.setGeometry(QRect(20, 20, 75, 24))
+
+        self.horizontalLayout.addWidget(self.widget_3)
+
 
         self.verticalLayout_3.addWidget(self.main_page_header)
 
         self.main_page_main = QWidget(self.main_page)
         self.main_page_main.setObjectName(u"main_page_main")
+        self.verticalLayout_5 = QVBoxLayout(self.main_page_main)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalSpacer = QSpacerItem(20, 64, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+
+        self.verticalLayout_5.addItem(self.verticalSpacer)
+
         self.plain_text_input = QTextEdit(self.main_page_main)
         self.plain_text_input.setObjectName(u"plain_text_input")
-        self.plain_text_input.setGeometry(QRect(0, 0, 381, 131))
-        self.translate_button = QPushButton(self.main_page_main)
+        self.plain_text_input.setMaximumSize(QSize(16777215, 100))
+
+        self.verticalLayout_5.addWidget(self.plain_text_input)
+
+        self.widget_4 = QWidget(self.main_page_main)
+        self.widget_4.setObjectName(u"widget_4")
+        self.horizontalLayout_3 = QHBoxLayout(self.widget_4)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.translate_button = QPushButton(self.widget_4)
         self.translate_button.setObjectName(u"translate_button")
-        self.translate_button.setGeometry(QRect(30, 150, 75, 24))
-        self.more_input_button = QPushButton(self.main_page_main)
+        self.translate_button.setMinimumSize(QSize(0, 64))
+        self.translate_button.setStyleSheet(u"border-radius: 20px")
+
+        self.horizontalLayout_3.addWidget(self.translate_button)
+
+        self.more_input_button = QPushButton(self.widget_4)
         self.more_input_button.setObjectName(u"more_input_button")
-        self.more_input_button.setGeometry(QRect(230, 150, 75, 24))
+        self.more_input_button.setMaximumSize(QSize(16777215, 64))
+
+        self.horizontalLayout_3.addWidget(self.more_input_button)
+
+
+        self.verticalLayout_5.addWidget(self.widget_4)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 120, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+
+        self.verticalLayout_5.addItem(self.verticalSpacer_2)
+
 
         self.verticalLayout_3.addWidget(self.main_page_main)
 
         self.main_page_main2 = QWidget(self.main_page)
         self.main_page_main2.setObjectName(u"main_page_main2")
+        self.main_page_main2.setMinimumSize(QSize(0, 75))
+        self.main_page_main2.setMaximumSize(QSize(16777215, 75))
+        self.label = QLabel(self.main_page_main2)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(0, 60, 211, 16))
+        font1 = QFont()
+        font1.setFamilies([u"Times New Roman"])
+        font1.setPointSize(7)
+        font1.setItalic(True)
+        self.label.setFont(font1)
 
         self.verticalLayout_3.addWidget(self.main_page_main2)
 
@@ -145,10 +207,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.header_name.setText(QCoreApplication.translate("MainWindow", u"AKAY", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"settings", None))
+        self.plain_text_input.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Insert Text here", None))
         self.translate_button.setText(QCoreApplication.translate("MainWindow", u"translate", None))
         self.more_input_button.setText(QCoreApplication.translate("MainWindow", u"more input", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Made by Ndstoc - Innolympics 2024", None))
         self.settings_button_2.setText(QCoreApplication.translate("MainWindow", u"settings", None))
         self.header_name_2.setText(QCoreApplication.translate("MainWindow", u"AKAY", None))
         self.translation_page_back_button.setText(QCoreApplication.translate("MainWindow", u"back", None))
