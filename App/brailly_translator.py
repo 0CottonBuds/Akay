@@ -168,6 +168,9 @@ def grade1_braille_translation(text):
 
     text = translate_numbers(text)
 
+    for key in upper_case.keys():
+        text = text.replace(key, upper_case[key])
+
     for key in alphabet.keys():
         text = text.replace(key, alphabet[key])
     
