@@ -11,7 +11,10 @@ class ArduinoSerialCommunication(QObject):
 
     def __init__(self, parent: QObject | None = ...) -> None:
         super().__init__(parent)
-        self.arduino = Serial('COM10', 9600, timeout=2)
+        try:
+            self.arduino = Serial('COM10', 9600, timeout=2)
+        except Exception:
+            pass
     
     def next_word(self):
         self.index += 1
@@ -62,12 +65,15 @@ class ArduinoSerialCommunication(QObject):
         except Exception:
             print("Something went wrong")
 
-        self.arduino.write(b"end\n")
-        response = self.arduino.read_until("\n")
-        print(response.strip())
+        try:
+            self.arduino.write(b"end\n")
+            response = self.arduino.read_until("\n")
+            print(response.strip())
 
-        # Close the serial connection
-        self.arduino.close()
+            # Close the serial connection
+            self.arduino.close()
+        except Exception:
+            pass
     
 if __name__ == "__main__":
     com = ArduinoSerialCommunication(None)

@@ -24,7 +24,7 @@ void loop() {
     }
     else{
       currentWord = data;
-      Serial.print("Data: " + data);
+      Serial.print("Data: " + data + "\n");
     }
 
     // do your braille thing here or better do it asynchronously

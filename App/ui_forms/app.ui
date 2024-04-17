@@ -37,7 +37,7 @@
       </property>
       <widget class="QWidget" name="main_page">
        <property name="styleSheet">
-        <string notr="true">background-color:rgb(255, 255, 127)</string>
+        <string notr="true">background-color:rgb(245, 205, 167)</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
@@ -51,19 +51,31 @@
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QWidget" name="widget" native="true">
-             <widget class="QPushButton" name="pushButton">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>20</y>
-                <width>75</width>
-                <height>24</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>About</string>
-              </property>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QPushButton" name="settings_button_3">
+                <property name="styleSheet">
+                 <string notr="true">border: 0;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons_rc.qrc">
+                  <normaloff>:/icons/icons/settings.png</normaloff>:/icons/icons/settings.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_16" native="true"/>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
@@ -73,6 +85,7 @@
                <widget class="QLabel" name="header_name">
                 <property name="font">
                  <font>
+                  <family>Maiandra GD</family>
                   <pointsize>28</pointsize>
                  </font>
                 </property>
@@ -85,21 +98,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QWidget" name="widget_3" native="true">
-             <widget class="QPushButton" name="settings_button">
-              <property name="geometry">
-               <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>75</width>
-                <height>24</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>settings</string>
-              </property>
-             </widget>
-            </widget>
+            <widget class="QWidget" name="widget_3" native="true"/>
            </item>
           </layout>
          </widget>
@@ -107,6 +106,9 @@
         <item>
          <widget class="QWidget" name="main_page_main" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <item>
             <spacer name="verticalSpacer">
              <property name="orientation">
@@ -131,6 +133,10 @@
                <height>100</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">border-radius: 10px;
+background-color:rgb(220, 219, 168)</string>
+             </property>
              <property name="placeholderText">
               <string>Insert Text here</string>
              </property>
@@ -138,7 +144,25 @@
            </item>
            <item>
             <widget class="QWidget" name="widget_4" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
+              </size>
+             </property>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <property name="leftMargin">
+               <number>4</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>4</number>
+              </property>
+              <property name="bottomMargin">
+               <number>4</number>
+              </property>
               <item>
                <widget class="QPushButton" name="translate_button">
                 <property name="minimumSize">
@@ -148,7 +172,11 @@
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border-radius: 20px</string>
+                 <string notr="true">border-radius: 25px;
+background-color:rgb(245, 205, 167);
+border-color: rgb(0,0,0);
+border-width : 1px;
+border-style:solid</string>
                 </property>
                 <property name="text">
                  <string>translate</string>
@@ -159,12 +187,20 @@
                <widget class="QPushButton" name="more_input_button">
                 <property name="maximumSize">
                  <size>
-                  <width>16777215</width>
+                  <width>52</width>
                   <height>64</height>
                  </size>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">border-radius: 25px;
+background-color: rgb(196, 219, 255)</string>
+                </property>
                 <property name="text">
-                 <string>more input</string>
+                 <string>Img</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons_rc.qrc">
+                  <normaloff>:/icons/icons/photo.svg</normaloff>:/icons/icons/photo.svg</iconset>
                 </property>
                </widget>
               </item>
@@ -229,100 +265,293 @@
        </layout>
       </widget>
       <widget class="QWidget" name="translation_page">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(245, 205, 167)</string>
+       </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QWidget" name="translation_page_header" native="true">
-          <widget class="QPushButton" name="settings_button_2">
-           <property name="geometry">
-            <rect>
-             <x>270</x>
-             <y>50</y>
-             <width>75</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>settings</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="header_name_2">
-           <property name="geometry">
-            <rect>
-             <x>120</x>
-             <y>20</y>
-             <width>111</width>
-             <height>71</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>28</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>AKAY</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="translation_page_back_button">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>50</y>
-             <width>75</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>back</string>
-           </property>
-          </widget>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>60</height>
+           </size>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QWidget" name="widget_5" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <widget class="QPushButton" name="translation_page_back_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>2</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 0px;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons_rc.qrc">
+                  <normaloff>:/icons/icons/3114883.png</normaloff>:/icons/icons/3114883.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_14" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_6" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLabel" name="header_name_2">
+                <property name="font">
+                 <font>
+                  <family>Maiandra GD</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>AKAY</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_7" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QWidget" name="widget_15" native="true"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="settings_button_2">
+                <property name="styleSheet">
+                 <string notr="true">border: 0;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons_rc.qrc">
+                  <normaloff>:/icons/icons/settings.png</normaloff>:/icons/icons/settings.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
          <widget class="QWidget" name="translation_page_main" native="true">
-          <widget class="QLabel" name="text_to_translate">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>40</y>
-             <width>81</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>CurrentText</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="braile_translation">
-           <property name="geometry">
-            <rect>
-             <x>120</x>
-             <y>90</y>
-             <width>111</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Braille substitution</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QWidget" name="widget_8" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>200</height>
+              </size>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Policy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>80</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="text_to_translate">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Semibold</family>
+                  <pointsize>24</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>CurrentText</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_9" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
+              </size>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLabel" name="braile_translation">
+                <property name="text">
+                 <string>Braille substitution</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
          <widget class="QWidget" name="translation_page_main2" native="true">
-          <widget class="QPushButton" name="next_word_button">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>70</y>
-             <width>75</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>next</string>
-           </property>
-          </widget>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>200</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QWidget" name="widget_10" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QWidget" name="widget_11" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_12" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QPushButton" name="prev_word_button">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>52</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 25px;
+background-color:rgb(250, 190, 152);
+border-color: rgb(0,0,0);
+border-width : 1px;
+border-style:solid</string>
+                   </property>
+                   <property name="text">
+                    <string>prev</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="icons_rc.qrc">
+                     <normaloff>:/icons/icons/3114883.png</normaloff>:/icons/icons/3114883.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="next_word_button">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>52</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LayoutDirection::RightToLeft</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 25px;
+background-color:rgb(201, 219, 186);
+border-color: rgb(0,0,0);
+border-width : 1px;
+border-style:solid</string>
+                   </property>
+                   <property name="text">
+                    <string>next</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="icons_rc.qrc">
+                     <normaloff>:/icons/icons/next.png</normaloff>:/icons/icons/next.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_13" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>64</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -345,6 +574,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons_rc.qrc"/>
+ </resources>
  <connections/>
 </ui>
