@@ -161,7 +161,9 @@ def grade2_braille_translate(text):
     for key in alphabet.keys():
         text = text.replace(key, alphabet[key])
 
-    return text
+    splitted_text = text.split(" ")
+
+    return splitted_text
     
 def grade1_braille_translation(text):
     text += " "
@@ -174,12 +176,14 @@ def grade1_braille_translation(text):
     for key in alphabet.keys():
         text = text.replace(key, alphabet[key])
     
+    splitted_text = text.split(" ")
+
     return text
 
 if __name__ == "__main__":
-    test_text = "Hello world how are you doing this is a sample text"
+    test_text = "hello test"
 
-    translated_text = grade1_braille_translation(test_text)
+    translated_text = grade2_braille_translate(test_text)
 
     print(translated_text)
 

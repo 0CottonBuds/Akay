@@ -202,7 +202,7 @@
         </item>
         <item>
          <widget class="QWidget" name="translation_page_main2" native="true">
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="next_word_button">
            <property name="geometry">
             <rect>
              <x>140</x>

@@ -103,9 +103,9 @@ class Ui_MainWindow(object):
 
         self.translation_page_main2 = QWidget(self.translation_page)
         self.translation_page_main2.setObjectName(u"translation_page_main2")
-        self.pushButton_3 = QPushButton(self.translation_page_main2)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(140, 70, 75, 24))
+        self.next_word_button = QPushButton(self.translation_page_main2)
+        self.next_word_button.setObjectName(u"next_word_button")
+        self.next_word_button.setGeometry(QRect(140, 70, 75, 24))
 
         self.verticalLayout_4.addWidget(self.translation_page_main2)
 
@@ -134,6 +134,6 @@ class Ui_MainWindow(object):
         self.translation_page_back_button.setText(QCoreApplication.translate("MainWindow", u"back", None))
         self.text_to_translate.setText(QCoreApplication.translate("MainWindow", u"CurrentText", None))
         self.braile_translation.setText(QCoreApplication.translate("MainWindow", u"Braille substitution", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"next", None))
+        self.next_word_button.setText(QCoreApplication.translate("MainWindow", u"next", None))
     # retranslateUi
 
