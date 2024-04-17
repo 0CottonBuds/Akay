@@ -40,12 +40,7 @@ class App():
 
         self.Q_app.exec()
 
-    def translate_plain_text(self):
-        self.current_text = self.ui.plain_text_input.toPlainText()
-
-        if self.current_text.strip() == "":
-            return
-
+    def translate(self):
         self.move_to_translation_page()
         self.current_translated_text = grade2_braille_translate(self.current_text)
         self.current_text = self.ui.plain_text_input.toPlainText().split()
@@ -54,26 +49,39 @@ class App():
         self.ui.braile_translation.setText(self.current_translated_text[self.current_word_index])
         print(self.current_text)
         print(self.current_translated_text)
+
+    def translate_plain_text(self):
+        self.current_text = self.ui.plain_text_input.toPlainText()
+
+        if self.current_text.strip() == "":
+            return
+
+        self.translate()
         #serial send word here
     
     def translate_image(self, image_path):
         self.current_text = image_to_text(image_path) 
         self.current_translated_text = grade2_braille_translate(self.current_text)
 
-        self.move_to_translation_page()
-        self.current_translated_text = grade2_braille_translate(self.current_text)
-        self.current_text = self.current_text.split()
-        self.current_word_index = 0 
-        self.ui.text_to_translate.setText(self.current_text[self.current_word_index])
-        self.ui.braile_translation.setText(self.current_translated_text[self.current_word_index])
-        print(self.current_text)
-        print(self.current_translated_text)        
-    
+        self.translate()
+
+   
     def translate_next_word(self):
         if self.current_word_index + 2 > len(self.current_text):
             self.move_to_main_page()
+            self.ui.plain_text_input.setText("")
             return
         self.current_word_index += 1 
+        self.ui.text_to_translate.setText(self.current_text[self.current_word_index])
+        self.ui.braile_translation.setText(self.current_translated_text[self.current_word_index])
+        #serial send word here
+
+    def translate_previous_word(self):
+        if self.current_word_index -1 < 0:
+            self.move_to_main_page()
+            self.ui.plain_text_input.setText("")
+            return
+        self.current_word_index -= 1 
         self.ui.text_to_translate.setText(self.current_text[self.current_word_index])
         self.ui.braile_translation.setText(self.current_translated_text[self.current_word_index])
         #serial send word here
