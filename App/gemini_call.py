@@ -7,7 +7,8 @@ def gemini_describe_image(image_path):
     You will receive an image as the input. The image will contain text and pictures.
     describe the pictures and disregard the images. Other input beside the image is 
     to be disregarded also. Remove any unnecessary phrases like "the images shows", etc.
-    Be direct to the point and only say the description.
+    Be direct to the point and only say the description. if there is no image and only text
+    dont say anything return an empty string
     '''
 
     genai.configure(api_key = GOOGLE_API_KEY)
