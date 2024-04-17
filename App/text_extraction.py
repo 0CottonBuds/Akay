@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 import pytesseract
+import gemini_call
+import os
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -63,7 +65,14 @@ if __name__ == "__main__":
     text_regions: list[tuple] = detect_text_regions(preprocessed_image)
 
     crop_text_regions(text_regions, image_path)
+
+    image_description = "%image% " + gemini_call.gemini_describe_image("./App/tmp/cropped_text_region.jpg")
     
-    text = extract_text_from_img("./App/tmp/cropped_text_region.jpg")
-    print(text)
+    text_from_image = extract_text_from_img("./App/tmp/cropped_text_region.jpg")
+
+    final_text = image_description + text_from_image
+
+    os.remove("./App/tmp/cropped_text_region.jpg")
+
+    print(final_text)
    
