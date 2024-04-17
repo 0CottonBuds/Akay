@@ -181,7 +181,7 @@ def grade1_braille_translation(text):
     return text
 
 if __name__ == "__main__":
-    test_text = "hello test"
+    test_text = "hello test hello"
 
     translated_text = grade2_braille_translate(test_text)
 
