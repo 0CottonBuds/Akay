@@ -1,35 +1,54 @@
 from serial import Serial
-import time
+from PySide6.QtCore import QObject, Slot, Signal, QRunnable
 
-class ArduinoSerialCommunication():
+class ArduinoSerialCommunication(QObject):
     arduino: Serial
+    start_translating = Signal(list[str])
+    next_pressed = Signal()
+    prev_pressed = Signal()
+    words: list[str]
+    index = 0
 
-    def __init__(self) -> None:
+    def __init__(self, parent: QObject | None = ...) -> None:
+        super().__init__(parent)
         self.arduino = Serial('COM10', 9600, timeout=2)
+    
+    def next_word(self):
+        self.index += 1
 
-    def run(self, words):
+    def prev_word(self):
+        self.index -= 1
+        
+    @Slot() 
+    def set_words(self, words):
+        self.words = words
+
+    @Slot()
+    def run(self):
         try:
-            i = 0
-            while i < len(words):
-                self.arduino.write(bytes(words[i], "utf-8")+ b'\n') 
+            self.index = 0
+            while self.index < len(self.words) -1:
+                self.arduino.write(bytes(self.words[self.index], "utf-8")+ b'\n') 
                 response = self.arduino.read_until("\n")
 
                 if response == b'':
                     print("empty")
                     continue
                 elif response == b'next\n':
-                    i += 1
+                    self.index += 1
                     # overflow protection
-                    if i >= len(words):
-                        i -= 1
-                    print(f"self.arduino requested next word current word {words[i]}")
+                    if self.index > len(self.words):
+                        break
+                    print(f"self.arduino requested next word current word {self.words[self.index]}")
+                    self.next_pressed.emit()
                     continue
                 elif response == b'prev\n':
-                    i -= 1
+                    self.index -= 1
                     # underflow protection
-                    if i < 0:
-                        i += 1
-                    print(f"self.arduino requested previous word current word {words[i]}")
+                    if self.index < 0:
+                        self.index += 1
+                    print(f"self.arduino requested previous word current word {self.words[self.index]}")
+                    self.prev_pressed.emit()
                     continue
                 elif response == b'end connection\n':
                     print("ending connection to arduino")
@@ -39,6 +58,9 @@ class ArduinoSerialCommunication():
 
         except KeyboardInterrupt:
             print("Program interrupted")
+        
+        except Exception:
+            print("Something went wrong")
 
         self.arduino.write(b"end\n")
         response = self.arduino.read_until("\n")
@@ -46,8 +68,7 @@ class ArduinoSerialCommunication():
 
         # Close the serial connection
         self.arduino.close()
-
     
 if __name__ == "__main__":
-    com = ArduinoSerialCommunication()
+    com = ArduinoSerialCommunication(None)
     com.run(["hello"])
