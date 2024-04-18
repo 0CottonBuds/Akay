@@ -5,8 +5,8 @@
 
 ## What is AKAY
 
-AKAY is combination of an App and IoT device that helps the visually impaired read text using braille.
-AKAY uses text to braille technology that converts text input from the user and images and converts into braille for the visually impaired. The App uses python as its main programming language for the app and an Arduino R3 for the IoT device that converts the text into braille.
+AKAY is a combination of an App and IoT device that helps the visually impaired read text using braille.
+AKAY uses text to braille technology that converts text input and images that converts data into braille for the visually impaired. The App uses python as its main programming language for the app and an Arduino R3 for the IoT device that converts the text into braille.
 
 ## Features
 
