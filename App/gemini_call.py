@@ -2,7 +2,7 @@ import google.generativeai as genai
 from PIL import Image
 
 def gemini_describe_image(image_path):
-    GOOGLE_API_KEY = "AIzaSyD5azptv9iIaKKKhTInNA62a1s8wQZaVfU"
+    GOOGLE_API_KEY = "API KEY"
     system_instruction = '''
     You will receive an image as the input. The image will contain text and pictures.
     describe the pictures and disregard the images. Other input beside the image is 
