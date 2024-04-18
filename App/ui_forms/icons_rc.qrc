@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/3114883.png</file>
+    <file>icons/next.png</file>
+    <file>icons/photo.svg</file>
+    <file>icons/settings.png</file>
+  </qresource>
+</RCC>

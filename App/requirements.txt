@@ -1,0 +1,6 @@
+pyside6
+numpy
+opencv-python
+PyPDF2 
+Pillow
+google-generativeai
