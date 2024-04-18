@@ -1,0 +1,66 @@
+#include <Servo.h>
+#include <Arduino.h>
+
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
+Servo servo5;
+Servo servo6;
+                 
+void setup() {
+  servo1.attach(2);
+  servo2.attach(4);
+  servo3.attach(7);
+  servo4.attach(8);
+  servo5.attach(12);
+  servo6.attach(13);
+  Serial.begin(9600);
+}
+
+void loop() {
+  String stringArray[] = {"100000", "110000", "100100", "100110", "100010", "110100"};
+    int numStrings = sizeof(stringArray) / sizeof(stringArray[0]); // Get number of strings
+
+    for (int i = 0; i < numStrings; i++) {
+      String currentString = stringArray[i];
+      int stringLength = currentString.length() + 1;
+      char charArray[stringLength];
+
+      // Convert string to character array
+      currentString.toCharArray(charArray, stringLength);
+      servo1.write(90);
+      servo2.write(90);
+      servo3.write(90);
+      servo4.write(90);
+      servo5.write(90);
+      servo6.write(90);
+      servo6.write(90);
+      delay(100);
+
+      for (int i = 0; i < stringLength; i++) {
+        Serial.print(charArray[i]);
+        if (charArray[0]=='1'){
+          servo1.write(60);
+        }
+        if (charArray[1]=='1'){
+          servo2.write(60);
+        }
+        if (charArray[2]=='1'){
+          servo3.write(60);
+        }
+        if (charArray[3]=='1'){
+          servo4.write(60);
+        }
+        if (charArray[4]=='1'){
+          servo5.write(60);
+        }
+        if (charArray[5]=='1'){
+          servo6.write(60);
+        }
+      }
+      delay(5000);
+      Serial.println();
+    }
+
+}
