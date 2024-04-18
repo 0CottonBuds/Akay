@@ -1,69 +1,90 @@
 <h1 align="center">Akay</h1>
-
 <p align="center">Ndstoc entry for GDSC Innolympics 2024</p>
 
-## Links
+<p align="center" style="text-color:gray"> Akay means to lend a hand</p>
 
-- [Repo](https://github.com/Rohit19060/<project-name> "<project-name> Repo")
+## What is AKAY
 
-- [Live](<Homepage url> "Live View")
+Akay is combination of an App and IoT device that helps the visually impaired read text using braille.
+Akay uses text to braille technology that converts text input from the user and images and converts into braille for the visually impaired. The App uses python as its main programming language for the app and an Arduino R3 for the IoT device that converts the text into braille.
 
-- [Bugs](https://github.com/Rohit19060/<project-name>/issues "Issues Page")
+## How To Set Up
 
-- [API](<API Link> "API")
+Install the following Python prerequisites to install the App:
 
-## Screenshots
+*pyside6*
+### pip install pyside6
 
-![Home Page](/screenshots/1.png "Home Page")
+PySide6 is a Python binding for the Qt cross-platform application and UI framework. It allows you to create applications with a native look and feel across different platforms.
 
-![](/screenshots/2.png)
+*numpy*
+### pip install numpy
 
-![](/screenshots/3.png)
+NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
 
-## Available Commands
+*opencv-python*
+### pip install opencv-python
 
-In the project directory, you can run:
+OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library.
 
-### `npm start" : "react-scripts start"`,
+*PyPDF2*
+### pip install PyPDF2
 
-The app is built using `create-react-app` so this command Runs the app in Development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You also need to run the server file as well to completely run the app. The page will reload if you make edits.
-You will also see any lint errors in the console.
+PyPDF2 is a Python library for reading and manipulating PDF files.
 
-### `"npm run build": "react-scripts build"`,
+*Pillow*
+### pip install Pillow
 
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app will be ready to deploy!
+Pillow is a Python Imaging Library (PIL) fork. It adds support for opening, manipulating, and saving many different image file formats.
 
-### `"npm run test": "react-scripts test"`,
+*google-generativeai*
+### pip install google-generativeai
 
-Launches the test runner in the interactive watch mode.
+Is a command used to install a Python library called google-generativeai. This library provides an interface for developers to use Google's generative AI models, like me (Gemini), through Python code.
 
-### `"npm run dev": "concurrently "nodemon server" "npm run start"`,
+## How to run
 
-For running the server and app together I am using concurrently this helps a lot in the MERN application as it runs both the server (client and server) concurrently. So you can work on them both together.
-
-### `"serve": "node server"`
-
-For running the server file on you can use this command.
-
-### `npm run serve`
-
-## Built With
-
-- JavaScript
-- Node
-- NPM
-- Webpack
-- HTML
-- CSS
+### Open the file main.py using:
+- python3 main.py or
+- Open main.py in the App folder
 
 ## Future Updates
 
-- [ ] Reliable Storage
+- Improve IoT design
+- Better UI/UX
+- Add a function to scan websites and articles
+- Live Image and Image Recognition to Braille
 
-## Author
+## Links
 
-**Rohit Jain**
+- [Akay Repository]([https://github.com/Rohit19060/<project-name> "<project-name> Repo](https://github.com/0CottonBuds/Akay/)")
 
-- [Profile](https://github.com/rohit19060 "Rohit jain")
-- [Email](mailto:rohitjain19060@gmail.com?subject=Hi "Hi!")
-- [Website](https://kingtechnologies.in "Welcome")
+## Screenshots
+
+![App Interface](/screenshots/1.png "App Interface 1")
+![App Interface](/screenshots/2.png "App Interface 2")
+
+## Authors
+
+*Iber Joseph Bonilla:*
+- Role: IoT Technician
+- Course: Bachelor of Science in Computer Science with Specilization in Machine Learning
+- School: National University - Manila
+
+*Emil John Llanes:*
+- Role: Full Stack Dev
+- Course: Bachelor of Science in Computer Science with Specilization in Machine Learning
+- School: National University - Manila
+
+*Jasper Eric Marano*
+- Role: System Analyst 
+- Course: Bachelor of Science in Computer Science with Specilization in Digital Forensics
+- School: National University - Manila
+
+*Cristian Ogena*
+- Role: System Analyst 
+- Course: Bachelor of Science in Computer Science with Specilization in Digital Forensics
+- School: National University - Manila
+- 
+<h1 align="center">Akay</h1>
+<p align="center">ALL RIGHTS RESERVED</p>
